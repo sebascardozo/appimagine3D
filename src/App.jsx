@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+/*import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -23,3 +23,17 @@ function App() {
 }
 
 export default App;
+*/
+import React from 'react';
+import NavBar from './components/NavBar.jsx';
+
+import './index.css';
+
+/* ⚠ Por favor leer el archivo readme 🙏*/
+export default function App() {
+  return (
+    <>
+      <NavBar />
+    </>
+  );
+}
