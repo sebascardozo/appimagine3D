@@ -2,6 +2,7 @@ import React from 'react';
 
 //import mi archivo css
 import './styles/NavBar.css';
+//import mi logo
 import logo from '../components/images/favicon-32x32.png'
 
 const NavBar = () => {
