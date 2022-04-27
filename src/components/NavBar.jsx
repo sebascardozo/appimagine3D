@@ -10,8 +10,8 @@ const NavBar = () => {
     return (
         <header className="header">
           {/* logo de la marca */}
-          <div className="logo-container">
-            <img src={logo} alt="logo" />
+          <div className="logo-container" >
+            <a href="/">< img src={logo}  alt="logo" /></a>
           </div>
           {/* links de navegación */}
           <nav>
