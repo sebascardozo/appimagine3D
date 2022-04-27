@@ -11,11 +11,12 @@
   }
   
   .logo-container {
-  color: #ebebeb;
-  border: 1px solid black;
+  color: #ebebeb00;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
   padding: 0.5rem;
-  background-color: #030303;
-  box-shadow: 2px 2px 5px #aaa0a0;
+  background-color: #fdfdfd49;
+  box-shadow: 2px 2px 5px #4b4848;
   }
   
   .nav-container {
@@ -27,14 +28,20 @@
     list-style: none;
  
   }
+ 
   
   .nav-container li a {
-    color: rgb(229, 255, 0);
+    color: #000000;
     border: solid 1px black;
     border-radius: 10px;
-    background-color: #161616;
+    background-color:  #fdfdfdaf;
     box-shadow: 2px 2px 5px #aaa0a0;
     padding: 1rem;
     text-decoration: none;
+    font-weight: bold;
+  }
+
+  .nav-container li   a:hover {
+    color: rgb(4, 62, 255);
   }
   
