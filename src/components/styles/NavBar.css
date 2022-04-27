@@ -28,6 +28,10 @@
     list-style: none;
  
   }
+  .nav-container li:hover {
+      transform: scale(1.1);
+      transition: 0.3s;
+  }
  
   
   .nav-container li a {
