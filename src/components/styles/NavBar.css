@@ -3,8 +3,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-image: linear-gradient(black, yellow, black);
-    background-size: cover;
+    background-image:url("../images/Captura\ de\ Pantalla\ 2022-04-27\ a\ la\(s\)\ 09.40.23.png");
+    background-size:cover;
+    background-position: center;
     box-shadow: 2px 2px 5px #2c2c2b;
     
   }
