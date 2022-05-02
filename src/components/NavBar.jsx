@@ -1,19 +1,14 @@
 import React from 'react';
-
-//import mi archivo css
+import CartWidget from './CartWidget';
 import './styles/NavBar.css';
-//import mi logo
 import logo from '../components/images/favicon-32x32.png'
 
 const NavBar = () => {
-  
     return (
         <header className="header">
-          {/* logo de la marca */}
           <div className="logo-container" >
             <a href="/">< img src={logo}  alt="logo" /></a>
-          </div>
-          {/* links de navegación */}
+          </div>        
           <nav>
             <ul className="nav-container">
               <li>
@@ -27,6 +22,7 @@ const NavBar = () => {
               </li>
             </ul>
           </nav>
+           <CartWidget />
           </header>
   );
 };

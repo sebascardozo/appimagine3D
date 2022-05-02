@@ -1,0 +1,28 @@
+.mensaje{
+    color: rgb(7, 0, 195);
+    font-size: 3rem;
+    text-align: center;
+    padding:4rem;
+    animation-name: animar;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes animar{
+   
+    10% {
+     
+      color: #9b59b6;
+    }
+    30% {
+   
+      color: rgb(251, 239, 0);
+    }
+    60%{
+    
+      color: #9b59b6;
+    }
+    100%{
+
+    color: #9b59b6;
+    }
+  }
