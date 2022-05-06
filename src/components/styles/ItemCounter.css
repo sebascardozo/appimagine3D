@@ -1,5 +1,10 @@
 .addToCart{
-    background:red;
-    height:2rem;
+ height:2rem;
  width: 2 rem;
+
+}
+.ItemCounter{
+    padding: 1rem;
+    background-color: red;
+    text-align: center;
 }
