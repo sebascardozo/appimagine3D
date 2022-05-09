@@ -14,23 +14,23 @@ function ItemCounter ({stock, initial, onAdd}) {
         }
         }
    function decrease(){
-            if (quantity > 1){
-                setQuality(quantity - 1);
-            }
+        if (quantity > 1){
+            setQuality(quantity - 1);
+        }
       }
      
         function addToCart(){
-
             onAdd (quantity);
-        }
+        } 
+    
    return ( 
      <div className="ItemCounter">
-         <img src={image} alt="" />
-     <h1>Ipresora 3D</h1>
-      <button id='plus' onClick={increase}>Sumar</button>
-           <span>{quantity}</span>
-     <button id='less' onClick={decrease}> Restar </button>
-     <button className="addToCart" onClick={addToCart}><FontAwesomeIcon icon={faCartShopping} /></button>
+         <img src={image} alt="impresora 3D" />
+     <h1>Impresora 3D</h1>
+      <button className="plus" id='plus' onClick={increase}>+</button>
+           <span>     {quantity}    </span>
+     <button className="less" id='less' onClick={decrease} > - </button>
+     <button className="addToCart" onClick={addToCart}> agregar <FontAwesomeIcon icon={faCartShopping} /> </button>
     </div>
      );
    }
