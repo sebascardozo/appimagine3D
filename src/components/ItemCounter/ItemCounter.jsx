@@ -6,21 +6,21 @@ import '../styles/ItemCounter.css'
 
 function ItemCounter ({stock, initial, onAdd}) {
 
-    const [quantity, setQuality] = useState(initial);
+    const [qty, setQuality] = useState(initial);
     
     function increase(){
-        if (quantity< stock){
-            setQuality(quantity + 1);
+        if (qty< stock){
+            setQuality(qty + 1);
         }
         }
    function decrease(){
-        if (quantity > 1){
-            setQuality(quantity - 1);
+        if (qty > 1){
+            setQuality(qty - 1);
         }
       }
      
         function addToCart(){
-            onAdd (quantity);
+            onAdd (qty);
         } 
     
    return ( 
@@ -28,7 +28,7 @@ function ItemCounter ({stock, initial, onAdd}) {
          <img src={image} alt="impresora 3D" />
      <h1>Impresora 3D</h1>
       <button className="plus" id='plus' onClick={increase}>+</button>
-           <span>     {quantity}    </span>
+           <span>     {qty}    </span>
      <button className="less" id='less' onClick={decrease} > - </button>
      <button className="addToCart" onClick={addToCart}> agregar <FontAwesomeIcon icon={faCartShopping} /> </button>
     </div>

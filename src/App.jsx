@@ -10,7 +10,7 @@ export default function App() {
     <>
       <NavBar />
       <ItemListContainer mensaje= {'BIENVENIDO A NUESTRA PAGINA'} />
-      <ItemCounter initial={1} stock={5} onAdd={(quantity)=>console.log(`${quantity} unidad agregada`)}/>
+      <ItemCounter initial={1} stock={5} onAdd={(qty)=>console.log(`${qty} unidad agregada`)}/>
     </>
     
   );
