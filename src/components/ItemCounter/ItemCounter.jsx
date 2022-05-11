@@ -27,7 +27,7 @@ function ItemCounter ({stock, initial, onAdd}) {
      <div className="ItemCounter">
          
       <button className="plus" id='plus' onClick={increase}>+</button>
-           <span>     {qty}    </span>
+           <span className="qty">     {qty}    </span>
      <button className="less" id='less' onClick={decrease} > - </button>
      <button className="addToCart" onClick={addToCart}> agregar <FontAwesomeIcon icon={faCartShopping} /> </button>
     </div>

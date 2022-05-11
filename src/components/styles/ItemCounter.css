@@ -1,21 +1,30 @@
 .addToCart{
  height:2rem;
- width: 2 rem;
+ width: 3 rem;
  margin-left:1rem;
+ justify-content:center;
+ box-shadow: 2px 2px 5px rgb(249, 249, 249);
+
 
 }
 .ItemCounter{
     padding: 1rem;
-    width: 15rem;
-    background-color: rgb(163, 154, 154);
+    background-color: rgb(0, 0, 0);
     text-align: center;
     justify-content: center;
 }
 .plus{
     padding: 0.5rem;
     margin-right: 1rem;
+    box-shadow: 2px 2px 5px rgb(249, 249, 249);
 }
 .less{
     padding: 0.5rem;
     margin-left: 1rem;
+    box-shadow: 2px 2px 5px rgb(249, 249, 249);
+    
+}
+.qty{
+    color: white;
+    font-size:1.5rem;
 }
