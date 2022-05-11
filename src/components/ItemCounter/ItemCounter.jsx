@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import image from '../images/impresora3d.png'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ItemCounter.css'
@@ -25,8 +25,7 @@ function ItemCounter ({stock, initial, onAdd}) {
     
    return ( 
      <div className="ItemCounter">
-         <img src={image} alt="impresora 3D" />
-     <h1>Impresora 3D</h1>
+         
       <button className="plus" id='plus' onClick={increase}>+</button>
            <span>     {qty}    </span>
      <button className="less" id='less' onClick={decrease} > - </button>
