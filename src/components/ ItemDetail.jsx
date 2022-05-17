@@ -1,4 +1,5 @@
 import ItemCounter from "../components/ItemCounter/ItemCounter"
+import './styles/ItemDetail.css'
 
 
 
@@ -9,6 +10,7 @@ function ItemDetail({product}) {
             <img src={product.image} alt="" className="detail-img"/>
             <div className="detail-item">
                 <p>{product.name}</p>
+           
                 <p>{product.price}</p>
                 <ItemCounter stock={product.stock} initial={product.initial} onAdd={(count)=> alert(`Has agregado ${count} producto/s a tu carrito`)}/>
             </div>

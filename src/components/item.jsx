@@ -11,6 +11,7 @@ function Item({product}) {
           <img className="card-image" src={product.image} alt="Imagen del producto"></img>  
           <div>{product.name}</div>
     </Link>
+    
           <div>{product.price}</div>
           <ItemCounter stock={product.stock} initial={product.initial} onAdd={(count)=> alert(`Has agregado ${count} producto/s a tu carrito`)}/>
     </div>

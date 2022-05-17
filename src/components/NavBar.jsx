@@ -15,6 +15,9 @@ export default function NavBar() {
             </Link>
             <nav className="navBar">
                 <ul className="nav-container">
+                <Link to='/' >
+                        <li>Inicio</li>
+                    </Link>
                     <Link to='/category/impresoras' >
                         <li>Impresoras</li>
                     </Link>
