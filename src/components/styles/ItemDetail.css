@@ -25,6 +25,14 @@
     height: 200px;
 }
 
+.detail-name {
+    font-size:25px;
+    color:blue;
+    text-align: center;
+}
+.detail-description {
+    text-align: center;
+}
 
 @media (min-width: 1024px) {
     .detail {
