@@ -24,7 +24,6 @@ export default function NavBar() {
                     <Link to='/category/insumos' >
                         <li>Insumos</li>
                     </Link>
-
                 </ul>
             </nav>
             <CartWidget/>

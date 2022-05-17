@@ -25,7 +25,6 @@ box-shadow: 2px 2px 5px #4b4848;
 
 .nav-container li {
   margin: 0 10px;
-  text-decoration: none;
   list-style: none;
   color: #000000;
   border: solid 1px black;
@@ -33,7 +32,6 @@ box-shadow: 2px 2px 5px #4b4848;
   background-color:  #fdfdfdaf;
   box-shadow: 2px 2px 5px #aaa0a0;
   padding: 1rem;
- 
   font-weight: bold;
   text-transform: uppercase;
 
