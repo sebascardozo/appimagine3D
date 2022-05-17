@@ -15,7 +15,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<ItemListContainer mensaje="Hola, soy ItemListContainer!"/>} />
-          <Route path="/categoria/:id" element={<ItemListContainer />} />
+          <Route path="/category/:id" element = { <ItemListContainer  /> } /> 
           <Route path="imgine3d/detail/:id" element={<ItemDetailContainer/>} />
           <Route path="/cart" element = { <Cart /> } />
           <Route path ="/imagine3d/*" element ={<Navigate to ="/imagine3d" replace/>}/>
