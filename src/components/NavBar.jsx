@@ -15,7 +15,7 @@ export default function NavBar() {
             </Link>
             <nav className="navBar">
                 <ul className="nav-container">
-                    <Link to='/' >
+                    <Link to='/imagine3d' >
                         <li>Inicio</li>
                     </Link>
                     <Link to='/category/impresoras' >
