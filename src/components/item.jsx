@@ -1,17 +1,13 @@
 
-
-import '../components/styles/item.css';
-
-
-
 import { Link } from "react-router-dom"
 import ItemCounter from "../components/ItemCounter/ItemCounter"
+import './styles/item.css';
 
 
 function Item({product}) {
   return (
    <div className="card" >
-    <Link to ={`/detail/${product.id}`}>
+    <Link to ={`imgine3d/detail/${product.id}`}>
           <img className="card-image" src={product.image} alt="Imagen del producto"></img>  
           <div>{product.name}</div>
     </Link>
@@ -23,3 +19,5 @@ function Item({product}) {
 }
 
 export default Item
+
+ 

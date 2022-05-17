@@ -13,8 +13,8 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<ItemListContainer greeting="Hola, soy ItemListContainer!"/>} />
-          <Route path="/category/:id" element={<ItemListContainer greeting="Hola, soy ItemListContainer!"/>} />
-          <Route path="/itemDetail/:id" element={<ItemDetailContainer/>} />
+          <Route path="/categoria/:id" element={<ItemListContainer greeting="Hola, soy ItemListContainer!"/>} />
+          <Route path="imgine3d/detail/:id" element={<ItemDetailContainer/>} />
    
         </Routes>
       </div>

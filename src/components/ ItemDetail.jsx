@@ -1,4 +1,3 @@
-   
 import ItemCounter from "../components/ItemCounter/ItemCounter"
 
 
@@ -19,3 +18,4 @@ function ItemDetail({product}) {
 }
 
 export default ItemDetail
+
