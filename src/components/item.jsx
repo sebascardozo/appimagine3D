@@ -1,22 +1,25 @@
-import React from 'react';
-import ItemCounter from './ItemCounter/ItemCounter'
+
+
 import '../components/styles/item.css';
 
 
 
-const Item = ({ name, image, price, id, stock }) => {
-  const onAdd = (qty) => {
-    console.log(`Has agregado ${qty} impresoras 🤖`);
-  };
+import { Link } from "react-router-dom"
+import ItemCounter from "../components/ItemCounter/ItemCounter"
 
+
+function Item({product}) {
   return (
-    <article className="product-card">
-      <h3 className="product-card__name">{name}</h3>
-      <img className="product-card__image" src={image} alt="" />
-      <span className="product-card__name">${price}</span>
-      <ItemCounter stock={stock} onAdd={onAdd} initial={1} />
-    </article>
-  );
-};
+   <div className="card" >
+    <Link to ={`/ecommerce-gonzalez/detail/${product.id}`}>
+          <img className="card-image" src={product.image} alt="Imagen del producto"></img>  
+          <div>{product.name}</div>
+    </Link>
+          <div>{product.price}</div>
+          <ItemCounter stock={product.stock} initial={product.initial} onAdd={(count)=> alert(`Has agregado ${count} producto/s a tu carrito`)}/>
+    </div>
+    
+  )
+}
 
-export default Item;
+export default Item
