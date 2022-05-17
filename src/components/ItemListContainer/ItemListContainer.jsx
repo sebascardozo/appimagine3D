@@ -12,7 +12,7 @@ import { products } from "../datos/datos";
 
   
 
- function ItemListContainer({ greeting }) {
+ function ItemListContainer({ mensaje }) {
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -26,9 +26,10 @@ import { products } from "../datos/datos";
 
     return (
         <>
-            <h1>{greeting}</h1> 
+            <h1>{mensaje}</h1> 
             {loading ? <Loader/>
             : (<ItemList products={products}/>)}
+            
         </>
     )
 }
