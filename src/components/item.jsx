@@ -11,7 +11,7 @@ import ItemCounter from "../components/ItemCounter/ItemCounter"
 function Item({product}) {
   return (
    <div className="card" >
-    <Link to ={`/ecommerce-gonzalez/detail/${product.id}`}>
+    <Link to ={`/detail/${product.id}`}>
           <img className="card-image" src={product.image} alt="Imagen del producto"></img>  
           <div>{product.name}</div>
     </Link>
