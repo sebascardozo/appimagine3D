@@ -18,7 +18,7 @@ function App() {
           <Route path="/category/:id" element = { <ItemListContainer  /> } /> 
           <Route path="imgine3d/detail/:id" element={<ItemDetailContainer/>} />
           <Route path="/cart" element = { <Cart /> } />
-          <Route path ="/imagine3d/*" element ={<Navigate to ="/imagine3d" replace/>}/>
+          <Route path="/*" element={<Navigate to="/" replace/>} />
         </Routes>
       </div>
     </BrowserRouter>
