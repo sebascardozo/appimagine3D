@@ -14,6 +14,6 @@ export const products = [
   { id: "5", name: "Pack Pla", category: "insumos",description: "Combo 6 kg Filamento Recarga para Impresora 3D PLA Hellbot ECOFILA 1.75mm", price: "$7.980", image:img4, stock:15, initial: 1},
   { id: "6", name: "Pack Recarga", category: "insumos", description: "Opción RECARGA. Misma calidad, mismo producto a un precio menor..", price: "$2.000", image:img5, stock:4, initial: 1},
   { id: "7", name: "Extrusor", category: "insumos",description: "Kit Extrusor Bowden Mk8 Dura Aluminio Para Impresora 3d 1.75mm Derecha", price: "$3.000", image:img6, stock:10, initial: 1},
-  { id: "8", name: "Resina Impresión", category: "impresoras",description: "Resina Impresión 3d Lavable Al Agua Hellbot X 250ml", price: "$3.000", image:img7, stock:3, initial: 1},
+  { id: "8", name: "Resina Impresión", category: "insumos",description: "Resina Impresión 3d Lavable Al Agua Hellbot X 250ml", price: "$3.000", image:img7, stock:3, initial: 1},
 
 ];
