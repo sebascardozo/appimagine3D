@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ItemCounter.css'
 
-function ItemCounter ({stock, initial, onAdd}) {
-
+function ItemCounter ({stock, initial, onAdd, handleInput}) {
+  const [count, setCount] = useState(initial);
     const [qty, setQuality] = useState(initial);
     
     function increase(){
@@ -19,9 +19,10 @@ function ItemCounter ({stock, initial, onAdd}) {
         }
       }
      
-        function addToCart(){
-            onAdd (qty);
-        } 
+      function addToCart() {
+        onAdd(count);
+        handleInput();
+      }
     
    return ( 
      <div className="ItemCounter">
@@ -35,3 +36,5 @@ function ItemCounter ({stock, initial, onAdd}) {
    }
 
   export default ItemCounter;
+
+

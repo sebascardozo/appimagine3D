@@ -1,4 +1,4 @@
-import img1 from '../images/impresora3d1.png';
+import img1 from '../images/impresora3d1 .png';
 import img2 from '../images/impresora3d2.png';
 import img3 from '../images/impresora3d3.png';
 import img0 from '../images/impresora3dmagna.png';
