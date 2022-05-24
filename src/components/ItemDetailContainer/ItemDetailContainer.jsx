@@ -18,14 +18,15 @@ function ItemDetailContainer({}) {
 
   const [product, setProduct] = useState([]);
   const[loading, setLoading] = useState([true]);
-  const {id} = useParams()
+ 
+  const {detailId} = useParams()
 
   useEffect(() =>{
-    findItem(id)
+    findItem(detailId)
     .then((resp) =>{setProduct(resp)})
     .catch((err) =>{console.log(err)})
     .finally(() => setLoading(false))
-  },[])
+  },[detailId])
 
  
   return (

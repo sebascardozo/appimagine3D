@@ -19,12 +19,22 @@ import { products } from "../datos/datos";
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
   
+    
     useEffect(() => {
+      if(id){
+      items
+      .then(resp => setProducts(resp.filter(product => product.category === id)))
+      .catch(err => {console.log(err)})
+      .finally(() => setLoading(false))
+      }
+      else {
       items
         .then(resp => {setProducts(resp)})
         .catch(err => {console.log(err)})
         .finally(() => setLoading(false))
-    }, []);
+      }
+    }, [id]);
+
 
     return (
         <>

@@ -11,7 +11,7 @@ const CartWidget = () => {
     <Link to='/Cart'>
     <div className="cart-widget">
       <FontAwesomeIcon icon={faCartShopping} size="2x" color="white" />
-      <div className="qty-display">0</div>
+      <div className="qty-display"></div>
     </div>
     </Link>
   );

@@ -1,54 +1,49 @@
-import {createContext, useContext, useState} from 'react';
+import { createContext, useContext, useState } from "react";
 
-const CartContext = createContext([])
+const cartContext = createContext([]);
 
-export const UseCartContext = () => useContext(CartContext)
+export function useCartContext() {
+    return useContext(cartContext)
+}
 
-const CartContextProvider = ({children}) => {
+export default function CartContextProv({children}) {
+    const [cartList, setCartList] = useState([]);
 
-    const [cartList, setCartList] = useState([])
-
-    function addToCart(item,){
-        if(cartList.some(article => article.id === item.id)){
-           const newCart = cartList.map(article => {
-               if(article.id === item.id) {
-                   article.count = item.count + article.count;
-               }
-               return article;
-           })
-        setCartList(newCart);
-
-        }
-        else {
+    function isInCart(id) {
+        return cartList.some(product => product.id === id);
+    }
+    function addToCart(item) {
+        if (isInCart(item.id)) {
+            let i = cartList.findIndex(product => product.id === item.id);
+            const newCartList = cartList;
+            newCartList[i].quantity += item.quantity;
+            setCartList(newCartList);
+        } else {
             setCartList([
                 ...cartList,
-                item
-            ])
+                item]);
         }
     }
-
-    const deleteItem = (id) => {
-        const newCart = [...cartList];
-        let index = newCart.findIndex((product) => product.id ===id);
-        newCart.splice(index,1);
-
-        setCartList([...newCart])
+    function clearCart() {
+        setCartList([]);
     }
-
-    const deleteCart = () => {
-        setCartList([])
+    function clearItem(id) {
+        let i = cartList.findIndex(product => product.id === id);
+        const newCartList = cartList;
+        newCartList.splice(i,1);
+        setCartList(newCartList);
     }
 
     return (
-        <CartContext.Provider value = { {
+        <cartContext.Provider value={{
             cartList,
             addToCart,
-            deleteItem,
-            deleteCart
-        } }>
+            clearCart,
+            clearItem
+        }}>
             {children}
-        </CartContext.Provider>
-    )
+        </cartContext.Provider>
+    );
 }
 
-export default CartContextProvider
+

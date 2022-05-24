@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ItemCounter.css'
 
-function ItemCounter ({stock, initial, onAdd, handleInput}) {
-  const [count, setCount] = useState(initial);
+function ItemCounter ({ stock, initial, onAdd, handleInput}) {
+
     const [qty, setQuality] = useState(initial);
+    
+    function addToCart() {
+      onAdd(qty);
+      handleInput();
+    }
     
     function increase(){
         if (qty< stock){
@@ -18,12 +22,9 @@ function ItemCounter ({stock, initial, onAdd, handleInput}) {
             setQuality(qty - 1);
         }
       }
+
      
-      function addToCart() {
-        onAdd(count);
-        handleInput();
-      }
-    
+
    return ( 
      <div className="ItemCounter">
          
@@ -35,6 +36,6 @@ function ItemCounter ({stock, initial, onAdd, handleInput}) {
      );
    }
 
-  export default ItemCounter;
+export default ItemCounter;
 
 
