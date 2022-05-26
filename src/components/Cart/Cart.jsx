@@ -21,7 +21,7 @@ function Cart() {
               </Link>
               <p>{product.name}</p>
               <p>Precio: {product.price}</p>
-              <p>Cantidad: {product.counter}</p>
+              <p>Cantidad: {product.qty}</p>
               <button onClick={()=>deleteItem(product.id)} className="delete-item"><FontAwesomeIcon icon={faTrash} size="lg"></FontAwesomeIcon></button>
             </li>)}
             {cartList.length ? <button className="delete-button" onClick={deleteCart}>Vaciar Carrito</button>  : <p>No hay productos en tu carrito</p>}

@@ -14,7 +14,7 @@ const CartContextProv = ({children}) => {
         if(cartList.some(article => article.id === item.id)){
            const newCart = cartList.map(article => {
                if(article.id === item.id) {
-                   article.count = item.count + article.count;
+                   article.qty = item.qty + article.qty;
                }
                return article;
            })
