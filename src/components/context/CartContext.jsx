@@ -6,44 +6,52 @@ export function useCartContext() {
     return useContext(cartContext)
 }
 
-export default function CartContextProv({children}) {
-    const [cartList, setCartList] = useState([]);
+const CartContextProv = ({children}) => {
 
-    function isInCart(id) {
-        return cartList.some(product => product.id === id);
-    }
-    function addToCart(item) {
-        if (isInCart(item.id)) {
-            let i = cartList.findIndex(product => product.id === item.id);
-            const newCartList = cartList;
-            newCartList[i].quantity += item.quantity;
-            setCartList(newCartList);
-        } else {
+    const [cartList, setCartList] = useState([])
+
+    function addToCart(item,){
+        if(cartList.some(article => article.id === item.id)){
+           const newCart = cartList.map(article => {
+               if(article.id === item.id) {
+                   article.count = item.count + article.count;
+               }
+               return article;
+           })
+        setCartList(newCart);
+
+        }
+        else {
             setCartList([
                 ...cartList,
-                item]);
+                item
+            ])
         }
     }
-    function clearCart() {
-        setCartList([]);
+
+    const deleteItem = (id) => {
+        const newCart = [...cartList];
+        let index = newCart.findIndex((product) => product.id ===id);
+        newCart.splice(index,1);
+
+        setCartList([...newCart])
     }
-    function clearItem(id) {
-        let i = cartList.findIndex(product => product.id === id);
-        const newCartList = cartList;
-        newCartList.splice(i,1);
-        setCartList(newCartList);
+
+    const deleteCart = () => {
+        setCartList([])
     }
+
 
     return (
         <cartContext.Provider value={{
             cartList,
             addToCart,
-            clearCart,
-            clearItem
+            deleteItem,
+            deleteCart
         }}>
             {children}
         </cartContext.Provider>
     );
 }
 
-
+export default CartContextProv
