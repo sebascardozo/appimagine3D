@@ -1,57 +1,69 @@
 import { createContext, useContext, useState } from "react";
 
-const cartContext = createContext([]);
+const CartContext = createContext([])
+
 
 export function useCartContext() {
-    return useContext(cartContext)
-}
-
-const CartContextProv = ({children}) => {
+    return useContext(CartContext)
+}const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalItems, setTotalItems] = useState(0);
 
-    function addToCart(item,){
-        if(cartList.some(article => article.id === item.id)){
-           const newCart = cartList.map(article => {
-               if(article.id === item.id) {
-                   article.qty = item.qty + article.qty;
-               }
-               return article;
-           })
-        setCartList(newCart);
-
-        }
-        else {
-            setCartList([
-                ...cartList,
-                item
-            ])
+    function isInCart(id) {
+        return cartList.some(product => product.id === id);
+    }
+    function addToCart(item) {
+        if (isInCart(item.id)) {
+       
+            let i = cartList.findIndex(product => product.id === item.id);
+            const newCartList = cartList;
+            newCartList[i].qty += item.qty;
+            updateCart(newCartList);
+        } else {
+            updateCart([...cartList,item]);
         }
     }
-
-    const deleteItem = (id) => {
-        const newCart = [...cartList];
-        let index = newCart.findIndex((product) => product.id ===id);
-        newCart.splice(index,1);
-
-        setCartList([...newCart])
-    }
-
     const deleteCart = () => {
-        setCartList([])
+        updateCart([]);
     }
+ 
+        function clearItem(id) {
+            let i = cartList.findIndex(product=> product.id === id);
+            const newCartList = cartList;
+            newCartList.splice(i,1);
+            updateCart(newCartList);
+        }
 
-
+  
+    
+    function updateCart(arr) {
+        setCartList(arr);
+        setTotalPrice(arr
+            .map(curr => curr.qty*curr.price)
+            .reduce((acc,curr) => acc+curr,0)
+        );
+        setTotalItems(arr
+            .map(curr => curr.qty)
+            .reduce((acc,curr) => acc+curr,0)
+        );
+    }
     return (
-        <cartContext.Provider value={{
+        <CartContext.Provider value = { {
             cartList,
             addToCart,
-            deleteItem,
-            deleteCart
-        }}>
+            clearItem,
+            deleteCart,
+            totalPrice,
+            totalItems
+        } }>
             {children}
-        </cartContext.Provider>
-    );
+        </CartContext.Provider>
+    )
 }
 
-export default CartContextProv
+export default CartContextProvider
+
+
+
