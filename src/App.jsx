@@ -11,8 +11,9 @@ import './index.css';
 
 function App() {
   return (
-    <CartContextProvider>
+    
     <BrowserRouter>
+    <CartContextProvider>
       <div className="App">
         <NavBar/>
         <Routes>
@@ -23,8 +24,9 @@ function App() {
           <Route path="/*" element={<Navigate to="/" replace/>} />
         </Routes>
       </div>
+      </CartContextProvider>
     </BrowserRouter>
-    </CartContextProvider>
+ 
   );
 }
 

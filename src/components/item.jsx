@@ -14,8 +14,7 @@ function Item({product}) {
           </div>
     </Link>
     <div className="card-name">{product.name}</div>
-          <div className="card-price">{product.price}</div>
-          <ItemCounter stock={product.stock} initial={product.initial} onAdd={(count)=> alert(`Has agregado ${count} producto/s a tu carrito`)}/>
+          <div className="card-price"> $ {product.price}</div>
     </div>
     
   )
