@@ -44,7 +44,7 @@ console.log(total)
             <input type="text" placeholder="Nombre"/>
             <input type="text" placeholder="Apellido"/>
             <input type="text" placeholder="Dirección"/>
-            <button type="submit">Terminar pedido</button>
+            <button type="submit">Terminar mi compra</button>
             </form>
 
         </div>
