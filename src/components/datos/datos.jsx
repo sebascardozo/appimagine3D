@@ -6,7 +6,8 @@ import img4 from '../images/plapack.png';
 import img5 from '../images/pla3d.png';
 import img6 from '../images/extrusor3d.png';
 import img7 from '../images/resina3d.png';
-export const products = [
+//export const products =
+ [
   { id: "1", name: "Impesora Ender",category: "impresoras",description: "La impresora 3D Sirius es una impresora precisa y facil de usar con excelentes resultados, perfecta para el uso doméstico y profesional.", price: " 14000 ", image:img1, stock:6, initial: 1},
   { id: "2", name: "Impresora Halox", category: "impresoras",description: "Impresora 3d Creality Halox Sky Resina Tecnología Dlp.Creality HALOT-SKY es una nueva generación de impresoras 3D de resina emblemáticas. ", price: " 26000 ", image:img2, stock:5, initial: 1},
   { id: "3", name: "Impresora Creality", category: "impresoras",description: "Sistema de movimiento y construcción:Se puso gran énfasis en la calidad de construcción robusta de la LD-002R y los componentes de su sistema de movimiento.", price: " 28000 ", image:img3, stock:4, initial: 1},
@@ -17,4 +18,7 @@ export const products = [
   { id: "8", name: "Resina Impresión", category: "insumos",description: "Resina Impresión 3d Lavable Al Agua Hellbot X 250ml", price: " 3000 " , image:img7, stock:3, initial: 1},
 
 ];
+
+          
+  
 
