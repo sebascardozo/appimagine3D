@@ -29,7 +29,7 @@ console.log(total)
             <button onClick={()=>deleteItem(product.id)} className="delete-item"><FontAwesomeIcon icon={faTrash} size="lg"></FontAwesomeIcon></button>
           </li>)}
           {cartList.length ? <div>`
-                                <h3 className="totalCompra">Total: ${total}</h3>
+                                <h3 className="totalCompra">Total: $ {total}</h3>
                                 <button className="delete-button" onClick={deleteCart}>Vaciar Carrito</button>
                             </div>  : <div className="carritoVacio">
                                                 <p>No hay productos en tu carrito</p>

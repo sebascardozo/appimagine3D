@@ -27,7 +27,7 @@ function ItemDetail({product}) {
         <div className="detail-item">
             <p className='detail-name'>{product.name}</p>
             <p className="detail-description">{product.description}</p>        
-            <p>{product.price}</p>
+            <p> $ {product.price}</p>
                 {
                   inputType === 'button' 
                   ? <ItemCounter stock={product.stock} initial={product.initial} onAdd={onAdd} handleInput={handleInput}/>
