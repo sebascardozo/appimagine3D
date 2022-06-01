@@ -15,12 +15,11 @@
   width: 150px;
   height: 150px;
 }
-.card-image:hover 
-{
+.card-image:hover {
 border-radius:50%;
 -webkit-border-radius:50%;
-box-shadow: 0px 0px 15px 15px #ec731e;
--webkit-box-shadow: 0px 0px 15px 15px #ec731e;
+box-shadow: 0px 0px 15px 15px #1e85ec;
+-webkit-box-shadow: 0px 0px 15px 15px #1e39ec;
 transform: rotate(360deg);
 -webkit-transform: rotate(360deg);
 }
@@ -63,6 +62,7 @@ height: 253px;
   background: #318aac;
   position: relative;
   border: 2px solid #318aac;
+  border-radius: 30px;
   outline: 1px solid;
   outline-color: rgba(49, 138, 172, 0.4);
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
