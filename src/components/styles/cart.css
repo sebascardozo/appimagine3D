@@ -1,3 +1,11 @@
+.cartTitle {
+    font-size:30px;
+    text-align: center;
+}
+.carritoVacio{
+    text-align: center;
+    font-size:30px;
+}
 .cart-container {
     display: flex;
     justify-content: center;
@@ -6,7 +14,7 @@
 
 .cart {
     min-width: 300px;
-    min-height: 100px;
+    min-height: 200px;
     
 }
 
@@ -38,16 +46,17 @@
 }
 
 .delete-button {
-    width: 150px;
+    width: 200px;
     height: 50px;
     margin: 15px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 20px;
     border-radius: 15px;
     border: none;
     cursor: pointer;
     color: #fff;;
-    background-color: #f60707
+   
+    background-color: #fbb901
 }
 
 
@@ -77,17 +86,6 @@
 
 }
 
-.cartInfo form button:hover {
-    transform: scale(1.03);
-    transition-duration: 0.5s;
-    cursor: pointer;
-}
-.delete-button:hover{
-    background-color: #8C9CA2;
-    color: #fff;
-    transition-duration: 0.5s;
-}
-
 .cartInfo {
     width: 50%;
 }
@@ -108,7 +106,6 @@
     background-color: transparent;
     text-align: center;
     padding: 0.5em;
-    padding-top: 4rem;
 }
 
 .cartInfo form button {
@@ -118,4 +115,10 @@
     color: #fff;
     border-style: none;
     width: 50%;
+}
+
+.cartInfo form button:hover {
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+    cursor: pointer;
 }

@@ -23,8 +23,6 @@ function ItemCounter ({ stock, initial, onAdd, handleInput}) {
         }
       }
 
-     
-
    return ( 
      <div className="ItemCounter">
          
