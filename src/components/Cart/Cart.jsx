@@ -42,13 +42,8 @@ export const Cart = () => {
               <p>Ir a la tienda <FontAwesomeIcon icon="fa-solid fa-cart-shopping-fast" /></p>
             </Link>
           </div> }
-          <Form />
-     
-          
-
-         
       </div>
-     
+      <Form />
     </div>
     <Footer />
     </>
