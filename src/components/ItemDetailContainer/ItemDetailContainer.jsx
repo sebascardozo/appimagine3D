@@ -4,6 +4,7 @@ import Loader from "../loader/loader";
 import ItemDetail from "../ ItemDetail";
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
+import {Footer} from "../Footer/Footer"
 
 //const findItem = (id) => {
  // return new Promise ((resolve) =>{
@@ -36,7 +37,10 @@ function ItemDetailContainer() {
     <>
     {loading ? <Loader/>
     : (<ItemDetail product={product}/>)}
+
+<Footer/>
     </>
+    
   )
 }
 
