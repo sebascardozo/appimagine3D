@@ -1,58 +1,19 @@
-
 import { useState } from 'react'
 import { useCartContext } from "../context/CartContext";
-import { collection, getFirestore, addDoc } from "firebase/firestore";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link} from "react-router-dom";
+import { Form } from "../Form/Form";
+import { Footer } from "../Footer/Footer";
 import '../styles/cart.css'
 
-const Cart = () => {
-  const [userId, setUserId] = useState('');
-  const db = getFirestore()
-  const {cartList, deleteCart, deleteItem} = useCartContext()
+export const Cart = () => {
+  const { cartList, deleteCart, deleteItem } = useCartContext();
+  const [buy, setBuy] = useState(false);
+
   const total = cartList.reduce((acc, product)=> acc = acc + ((product.price) * product.qty),0)
-  const [buyer, setBuyer] = useState({
-    name:'',
-    email: '',
-    lastName:'',
-    adress: '',
-    city: ''
-  });
-  function handleInputChange(e){
-    setBuyer({
-      ...buyer,
-      [e.target.name]: e.target.value
-    })
-  }
 
-  function newOrder(e){
-        e.preventDefault();
-        let order = {};
 
-        order.buyer = buyer;
-        order.products = cartList.map(product => {
-            const id = product.id;
-            const name = product.name;
-            const price = product.price;
-            const qty = product.counter;
-
-            return { id, name, price, qty }
-          })
-          console.log(order)
-        order.total = total;
-        
-        const queryCollectionOrders = collection(db, 'orders')
-
-        setTimeout(()=>{
-          addDoc(queryCollectionOrders, order)
-            .then(resp => setUserId(resp.id))
-            .catch(err => console.log(err))
-          // .finally(deleteCart())
-          
-        },2000)
-       
-    }
   return (
     
     <div className="cart-container">
@@ -81,18 +42,15 @@ const Cart = () => {
               <p>Ir a la tienda <FontAwesomeIcon icon="fa-solid fa-cart-shopping-fast" /></p>
             </Link>
           </div> }
+          <Form />
+         <div>
+         <Footer />
+         </div>
+         
       </div>
-      <div className="cartInfo">
-                        <form onSubmit={(e) => newOrder(e)}>
-                          <input type="email" placeholder="Mail" name="email" onChange={handleInputChange} />
-                          <input type="text" placeholder="Nombre" name="name" onChange={handleInputChange} />
-                          <input type="text" placeholder="Apellido" name="lastName" onChange={handleInputChange} />
-                          <input type="text" placeholder="Dirección" name="adress" onChange={handleInputChange} />
-                          <input type="text" placeholder="Localidad" name="city" onChange={handleInputChange} />
-                          <button type="submit">Enviar pedido</button>
-                        </form>
-                      </div>
+     
     </div>
+    
   )
 }
 

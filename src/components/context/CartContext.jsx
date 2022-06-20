@@ -4,10 +4,14 @@ const CartContext = createContext([])
 
 export const useCartContext = () => useContext(CartContext)
 
-const CartContextProvider = ({children}) => {
-
-    const [cartList, setCartList] = useState([])
-
+const CartContextProvider = ({ children }) => {
+    const [cartList, setCartList] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalProducts, setTotalProducts] = useState(0);
+     const total = cartList.reduce((acc, product)=> acc = acc + ((product.price) * product.qty),0);
+    
+  
+    //añadir al carrito
     function isInCart(id) {
         return cartList.some(product => product.id === id);
     }
@@ -24,8 +28,24 @@ const CartContextProvider = ({children}) => {
                 item]);
         }
     }
-
   
+    //actualizar carrito//
+    function updateCart() {
+      setTotalPrice(
+        cartList
+          .map((element) => element.counter * element.price)
+          .reduce((anterior, siguiente) => anterior + siguiente, 0)
+      );
+  
+      //Total products //
+      setTotalProducts(
+        cartList
+          .map((element) => element.counter)
+          .reduce((anterior, siguiente) => anterior + siguiente, 0)
+      );
+    }
+
+    //Remove Product//
     const deleteItem = (id) => {
         const newCart = [...cartList];
         let index = newCart.findIndex((product) => product.id ===id);
@@ -33,7 +53,7 @@ const CartContextProvider = ({children}) => {
 
         setCartList([...newCart])
     }
-
+    //Clear Cart//
     const deleteCart = () => {
         setCartList([])
     }

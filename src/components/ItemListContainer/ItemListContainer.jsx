@@ -4,14 +4,7 @@ import { collection, getDocs, getFirestore, where, query } from 'firebase/firest
 import ItemList from "../ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "../loader/loader";
-//import { products } from "../datos/datos";
-
-
- // //const items = new Promise((resolve) => {
- //   setTimeout(() => {
-  //    resolve(products);
-  //  }, 2000);
- // //});
+import { Footer } from '../Footer/Footer';
 
   
 
@@ -52,9 +45,14 @@ import Loader from "../loader/loader";
             <h1>{mensaje}</h1> 
             {loading ? <Loader/>
             : (<ItemList products={products} />)}
-            
+       
+       
+        <Footer/>
+        
         </>
-    )
+        
+    );
+    
 }
   
   export default ItemListContainer;

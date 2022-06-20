@@ -6,6 +6,7 @@ import ItemListContainer from '../src/components/ItemListContainer/ItemListConta
 import ItemDetailContainer from '../src/components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart';
 import CartContextProvider from "../src/components/context/CartContext";
+import { LogIn } from '../src/components/Login/LogIn';
 import './index.css';
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/category/:id" element = { <ItemListContainer  /> } /> 
           <Route path="//detail/:id" element={<ItemDetailContainer/>} />
           <Route path="/cart" element = { <Cart /> } />
+          <Route path='login' element={<LogIn/>}/>
           <Route path="/*" element={<Navigate to="/" replace/>} />
         </Routes>
       </div>

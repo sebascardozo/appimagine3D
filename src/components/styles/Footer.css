@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Poppins:wght@500&display=swap');
+
+footer{
+    height: 7em;
+    background-image:url(../images/Captura\ de\ Pantalla\ 2022-04-27\ a\ la\(s\)\ 09.40.23.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.redes img{
+    width: 2em;
+    height: auto;
+}
+
+.pFooter{
+    text-align: center;
+    font-family:  'Manrope', sans-serif;
+    color: #fefefe;
+}
+
+
