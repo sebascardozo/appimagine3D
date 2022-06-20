@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import whatsapp from "../images/whatsapp.jpeg"
+import whatsapp from "../images/whatsapp.png"
 import linkedin from "../images/linkedIn.jpeg"
 import github from "../images/github.png"
 

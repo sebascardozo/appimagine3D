@@ -15,7 +15,7 @@ export const Cart = () => {
 
 
   return (
-    
+    <>
     <div className="cart-container">
       <div className="cart">
         <h2 className="cartTitle">Tu Carrito de Compras  🛒</h2>
@@ -43,14 +43,15 @@ export const Cart = () => {
             </Link>
           </div> }
           <Form />
-         <div>
-         <Footer />
-         </div>
+     
+          
+
          
       </div>
      
     </div>
-    
+    <Footer />
+    </>
   )
 }
 
