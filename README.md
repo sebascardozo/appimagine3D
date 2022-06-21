@@ -1,71 +1,42 @@
-# Getting Started with Create React App
+Imagine3D 💻
+Proyecto React JS CoderHouse /Sebastian Cardozo
+Imagine 3D es un ecommerce de venta de Impresoras 3D e insumos. Puedes seleccionar en páginas que quieres comprar.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+📑 PÁGINAS 
 
-### `npm start`
+✔️INICIO:
+En la página de inicio del sitio se alojan los productos de la tienda, además de los accesos al resto de las secciones. Las remeras y gorras están presentadas con un diseño minimalista y de formas redondeadas; al pasar el mouse por encima de cada imagen se puede ver en detalle la imagen del diseño. Esta sección cuenta además con un filtro para seleccionar qué tipo de productos queremos visualizar.
+✔️IMPRESORAS:
+Sección dedicada a modelos de impresoras 3D.
+✔️INSUMOS:
+Sección dedicada a insumos para impresión 3D.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+PROCESO PARA COMPRAR
 
-### `npm run build`
+✅ Detalle del producto:
+Al clickear en alguno de los PRODUCTOS se ingresa al detalle del mismo. 
+Contiene:
+Imagen del producto
+Detalle del producto.
+Precio del producto.
+Stock disponible. Luego de agregar al carrito el producto aparecen dos nuevos botones en reemplazo del contador: "finalizar compra" redirecciona al carrito; "seguir comprando" te dirije a la tienda.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ Carrito:
+Luego de elegir los productos, la compra continúa en el carrito. En esta sección se muestran los ítems seleccionados con sus detalles: foto, nombre, cantidad, precio unitario y precio total, clickeando en la imagen del producto se puede acceder nuevamente al detalle del producto. Además, en el cuadro que muestra el precio total y se puede eliminar del carrito la selección. También se puede optar por vaciar el carrito con el botón que está bajo de los productos (en rojo).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ Formulario finalizar compra:
+ En el se deben completar los datos personales . El formulario cuenta con una validación del email: el botón de pagar sólo se visualizará (debajo del detalle del carrito) si los mails coinciden y contienen "@".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Una vez completados los datos, se finaliza con la compra haciendo click en el botón. En este paso suceden varias cosas: en pantalla se ofrece el número de orden de compra y en la base de datos se guarda la orden con los datos correspondientes 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
- by sebas 
+Librerías:
+React Router Dom.
+FireBase.
+Deploy
+El deploy del sitio fue realizado en Netlify, se encuentra en este link => 
