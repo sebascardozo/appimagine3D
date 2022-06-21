@@ -1,4 +1,4 @@
-import Item from "../components/item"
+import Item from "../components/Item"
 import '../components/styles/ItemList.css'
 
 

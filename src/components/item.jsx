@@ -1,6 +1,5 @@
 
 import { Link } from "react-router-dom"
-import ItemCounter from "../components/ItemCounter/ItemCounter"
 import './styles/item.css';
 
 
