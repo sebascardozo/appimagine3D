@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     margin-top: 50px;   
+    margin-left: 50px;
 }
 
 .cart {
@@ -56,7 +57,7 @@
     cursor: pointer;
     color: #fff;;
    
-    background-color: #fbb901
+    background-color: #fb0101
 }
 
 

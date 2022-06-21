@@ -15,7 +15,6 @@ export const Form = () => {
   const MySwal = withReactContent(Swal);
   const total = cartList.reduce((acc, product)=> acc = acc + ((product.price) * product.qty),0);
 
-
   const [buyer, setBuyer] = useState({
     name: "",
     email: "",
@@ -38,11 +37,11 @@ export const Form = () => {
     if (buyer.email === buyer.emailConfirm) {
       order.buyer = buyer;
       order.date = new Date();
-      order.items = cartList.map((item) => {
-        const id = item.id;
-        const name = item.name;
-        const price = item.price;
-        const qty = item.count;
+      order.products = cartList.map((product) => {
+        const id = product.id;
+        const name = product.name;
+        const price = product.price;
+        const qty = product.qty;
 
         return { id, name, price, qty };
       });
@@ -57,8 +56,8 @@ export const Form = () => {
           .catch((err) => console.log(err))
           .finally(
             swal({
-              title: "Gracias por su compra " + buyer.name + "!",
-              text: "Su número de orden es " + userId,
+              title: "Gracias por tú compra " + buyer.name + "!",
+              text: "Su pedido es = "+ JSON.stringify(order.products) +  "Su codigo es = "+ userId,
               icon: "success",
             })
           );
