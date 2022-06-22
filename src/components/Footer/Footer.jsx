@@ -21,7 +21,6 @@ export const Footer = () => {
               <img src={github}/> 
             </Link>
 
-            
         </div>
         <p className="pFooter" >Copyright ©️ Sebastian Cardozo <br /> Proyecto final ReactJs</p>
     </footer>
