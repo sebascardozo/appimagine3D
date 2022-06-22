@@ -7,8 +7,11 @@
 }
 
 .form input {
-    width: 200px;
+    width: 300px;
     height: 30px;
+    margin:5px;
+    border-radius:5px;
+    border-color: rgb(7, 19, 255);
 }
 
 .end-button {

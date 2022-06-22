@@ -24,16 +24,15 @@ export const Form =()  => {
 
         return { id, name, price, qty };
           })
-          console.log(order.products);
+          console.log(order.buyer);
      
-         
-
           const db = getFirestore()
           const queryCollection = collection(db, "orders")
+          
           const buy =order.products = cartList.map((product) => {
-            const name = product.name;
-            const price = product.price;
-            const qty = product.qty;
+          const name = product.name;
+          const price = product.price;
+          const qty = product.qty;
             return { name, price, qty };
           })
           addDoc(queryCollection, order)
@@ -54,7 +53,7 @@ export const Form =()  => {
       
           await getDocs(queryUpdateStock)
           .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-              stock: res.data().stock - cartList.find(product => product.id === res.id).counter
+              stock: res.data().stock - cartList.find(product => product.id === res.id).qty
           })))
           .finally(()=> console.log("updated"))
       
@@ -75,7 +74,6 @@ export const Form =()  => {
 
   return (
     <div>
-        <h2 className="title">Formulario</h2>
         <div className="form">
             <input name='name' type="text" placeholder='Nombre' value={dataForm.name} onChange={handlerChange}></input>
             <input name='lastName' type="text" placeholder='Apellido' value={dataForm.lastName} onChange={handlerChange}></input>

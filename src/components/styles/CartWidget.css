@@ -23,13 +23,17 @@
   height: 25px;
   background-color: rgb(255, 242, 0);
   border-radius: 50%;
+
   position: absolute;
   text-align: center;
   line-height: 22px;
   color: rgb(10, 10, 10)
 }
-@media (min-width: 650px) {
 
+@media (min-width: 768px) {
+  .cartWidget__icon {
+      font-size: 3.5rem;
+  }
   .cartWidget__counter {
       font-size: 1.5rem;
   }

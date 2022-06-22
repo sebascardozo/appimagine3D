@@ -13,7 +13,7 @@ export default function NavBar() {
             <Link to='/'>
                 <img className="logo-container" src={logo} alt="" />
             </Link>
-            <nav>
+            <nav >
                 <ul className="nav-container">
                     <Link to='/' className='link' >
                         <li>Inicio</li>

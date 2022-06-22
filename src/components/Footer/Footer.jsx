@@ -14,10 +14,10 @@ export const Footer = () => {
             <Link to='wa.link/zequw7'>
               <img src={whatsapp}/> 
             </Link>
-            <Link to='https://www.linkedin.com/in/sebastian-cardozo-51027021b/'>
+            <Link to='https://www.linkedin.com/in/sebastian-cardozo-51027021b/' onClick={() => (window.location = "https://www.linkedin.com/in/sebastian-cardozo-51027021b/")}>
               <img src={linkedin}/> 
             </Link>
-            <Link to='https://github.com/sebascardozo'>
+            <Link to='https://github.com/sebascardozo'onClick={() => (window.location = "https://github.com/sebascardozo")}>
               <img src={github}/> 
             </Link>
 

@@ -9,6 +9,7 @@
   background-size:cover;
   background-position: center;
   box-shadow: 2px 2px 5px #2c2c2b;
+  
 }
 .logo-container {
 color: #ebebeb00;
@@ -24,9 +25,6 @@ box-shadow: 2px 2px 5px #4b4848;
   display: flex;
 }
 
-.link {
-  text-decoration: none;
-}
 .nav-container li {
   margin: 0 10px;
   list-style: none;
@@ -45,11 +43,13 @@ box-shadow: 2px 2px 5px #4b4848;
     transform: scale(1.1);
     transition: 0.3s;
 }
-
+.link {
+  text-decoration: none;
+}
 @media (min-width: 650px) {
 
   .nav-container {
-      right: 5px;
+      right: 25px;
   }     
   .nav-container li {
       font-size: 1rem;
@@ -64,7 +64,10 @@ box-shadow: 2px 2px 5px #4b4848;
   .nav-container li {
       padding: 20px;
   }
+  .total-count{
+      position: relative;
 
+  }
   }
   
 

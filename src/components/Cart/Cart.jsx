@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import { useCartContext } from "../context/CartContext";
 import { Link} from "react-router-dom";
 import { Form } from "../Form/Form";
@@ -9,7 +9,6 @@ import '../styles/cart.css'
 
 export const Cart = () => {
   const { cartList, deleteCart, deleteItem } = useCartContext();
-  const [buy, setBuy] = useState(false);
   const total = cartList.reduce((acc, product)=> acc = acc + ((product.price) * product.qty),0)
 
 
@@ -26,11 +25,11 @@ export const Cart = () => {
             <p>{product.name}</p>
             <p>Precio: {product.price}</p>
             <p>Cantidad: {product.qty}</p>
-            <button onClick={()=>deleteItem(product.id)} className="delete-item"><FontAwesomeIcon icon={faTrash} size="lg"></FontAwesomeIcon></button>
+            <button onClick={()=>deleteItem(product.id)} className="delete-item">❌</button>
           </li>)}
           {cartList.length ?(
             <>
-            <div>
+            <div className="total">
                 <h3 className="totalCompra">Total: ${total}</h3>
                 <button className="delete-button" onClick={deleteCart}>Vaciar Carrito  <FontAwesomeIcon icon={faTrash} size="lg"></FontAwesomeIcon></button>
            </div> 
