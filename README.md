@@ -39,4 +39,4 @@ Librerías:
 React Router Dom.
 FireBase.
 Deploy
-El deploy del sitio fue realizado en Netlify, se encuentra en este link => imagine3d.netlify.app
+El deploy del sitio fue realizado en Netlify, se encuentra en este link => [imagine3d.netlify.app](https://imagine3d.netlify.app/)
