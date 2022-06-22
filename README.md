@@ -1,6 +1,14 @@
 Imagine3D 💻
 Proyecto React JS CoderHouse /Sebastian Cardozo
-Imagine 3D es un ecommerce de venta de Impresoras 3D e insumos. Puedes seleccionar en páginas que quieres comprar.
+
+
+Imagine3D es un ecommerce de venta de Impresoras 3D e insumos. Puedes seleccionar en páginas que quieres comprar.
+
+https://user-images.githubusercontent.com/99739645/175103912-0fb772ed-a27b-4df4-9267-2d1652320c67.mp4
+
+
+
+
 
 
 
@@ -32,7 +40,7 @@ Luego de elegir los productos, la compra continúa en el carrito. En esta secci�
 ✅ Formulario finalizar compra:
  En el se deben completar los datos personales . El formulario cuenta con una validación del email: el botón de pagar sólo se visualizará (debajo del detalle del carrito) si los mails coinciden y contienen "@".
 
-Una vez completados los datos, se finaliza con la compra haciendo click en el botón. En este paso suceden varias cosas: en pantalla se ofrece el número de orden de compra y en la base de datos se guarda la orden con los datos correspondientes 
+Una vez completados los datos, se finaliza con la compra haciendo click en el botón. En este paso suceden varias cosas: en pantalla se ofrece el número de orden de compra y en la base de datos se guarda la orden con los datos correspondientes, por último se corrige el stock de los productos comprados en FIREBASE.
 
 
 Librerías:
