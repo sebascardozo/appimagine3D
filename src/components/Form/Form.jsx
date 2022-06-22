@@ -1,41 +1,20 @@
 import React from "react";
 import { useState } from "react";
 import { useCartContext } from "../context/CartContext";
-import { collection, getFirestore, addDoc, getDoc } from "firebase/firestore";
-import Swal from "sweetalert2";
+import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from "firebase/firestore";
 import swal from "sweetalert";
-import withReactContent from "sweetalert2-react-content";
 import "../styles/Form.css"
 
-export const Form = () => {
-  const db = getFirestore();
-  const [userId, setUserId] = useState("");
-  const [buy, setBuy] = useState(false);
-  const { cartList, deleteCart } = useCartContext();
-  const MySwal = withReactContent(Swal);
-  const total = cartList.reduce((acc, product)=> acc = acc + ((product.price) * product.qty),0);
+export const Form =()  => {
+  const[dataForm, setDataForm] = useState({email: "", emailConfirm: "", name: "", lastName:"", phone: ""})
+  const {totalPrice, cartList, deleteCart} = useCartContext()
 
-  const [buyer, setBuyer] = useState({
-    name: "",
-    email: "",
-    emailConfirm: "",
-    lastName: "",
-    adress: "",
-    city: "",
-  });
-
-  function handleInputChange(e) {
-    setBuyer({
-      ...buyer,
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  function newOrder(e) {
-    e.preventDefault();
-    let order = {};
-    if (buyer.email === buyer.emailConfirm) {
-      order.buyer = buyer;
+  async function generateOrder(e) {
+      e.preventDefault()
+      let order = {}
+  
+      if(dataForm.name && dataForm.lastName&& dataForm.phone && dataForm.email && (dataForm.email === dataForm.emailConfirm)) {
+     order.buyer = dataForm
       order.date = new Date();
       order.products = cartList.map((product) => {
         const id = product.id;
@@ -44,70 +23,61 @@ export const Form = () => {
         const qty = product.qty;
 
         return { id, name, price, qty };
-      });
-      console.log(order);
-      order.total = total;
+          })
+          console.log(order.products);
+     
+         
 
-      const queryCollectionOrders = collection(db, "orders");
-
-      setTimeout(() => {
-        addDoc(queryCollectionOrders, order)
-          .then((resp) => setUserId(resp.id))
-          .catch((err) => console.log(err))
-          .finally(
-            swal({
-              title: "Gracias por tú compra " + buyer.name + "!",
-              text: "Su pedido es = "+ JSON.stringify(order.products) +  "Su codigo es = "+ userId,
-              icon: "success",
-            })
-          );
-      }, 2000);
-    } else {
-      alert("ingresa bien");
-    }
+          const db = getFirestore()
+          const queryCollection = collection(db, "orders")
+      
+          addDoc(queryCollection, order)
+          .then(resp =>
+              swal({
+                  title:`Gracias por tu compra, tu orden ha sido generada con el número ${resp.id}`,
+                  icon: "success"}))
+          .catch(err => console.log(err))
+          .finally(() => deleteCart())
+      
+          const queryCollectionStock = collection(db, "products")
+          const queryUpdateStock = query (
+              queryCollectionStock,
+              where( documentId(), "in", cartList.map(it => it.id) ))
+      
+          const batch = writeBatch(db)
+      
+          await getDocs(queryUpdateStock)
+          .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
+              stock: res.data().stock - cartList.find(product => product.id === res.id).counter
+          })))
+          .finally(()=> console.log("updated"))
+      
+          batch.commit()
+      }
+      else {swal({
+          title:"Por favor, verifica que los datos sean correctos",
+          icon: "warning"})}
   }
 
+  const handlerChange = (e) => {
+      setDataForm({
+          ...dataForm,
+          [e.target.name]: e.target.value
+      })
+  }
+
+
   return (
-    <div className="cartInfo">
-      <form onSubmit={(e) => newOrder(e)}>
-        <input
-          type="email"
-          placeholder="Mail"
-          name="email"
-          onChange={handleInputChange}
-        />
-        <input
-          type="email"
-          placeholder="Confirme su mail"
-          name="emailConfirm"
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          placeholder="Nombre"
-          name="name"
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          placeholder="Apellido"
-          name="lastName"
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          placeholder="Dirección"
-          name="adress"
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          placeholder="Localidad"
-          name="city"
-          onChange={handleInputChange}
-        />
-        <button type="submit">Terminar pedido</button>
-      </form>
+    <div>
+        <h2>Formulario</h2>
+        <div className="cartInfo">
+            <input name='name' type="text" placeholder='Nombre' value={dataForm.name} onChange={handlerChange}></input>
+            <input name='lastName' type="text" placeholder='Apellido' value={dataForm.lastName} onChange={handlerChange}></input>
+            <input name='phone' type="text" placeholder='Teléfono' value={dataForm.phone} onChange={handlerChange}></input>
+            <input name='email' type="email" placeholder='Email' value={dataForm.email} onChange={handlerChange}></input>
+             <input name='emailConfirm' type="email" placeholder='Re-ingresa tu email' value={dataForm.emailConfirm} onChange={handlerChange}></input>
+        </div>
+        <button className="end-button" onClick={generateOrder}>Terminar compra</button>
     </div>
-  );
-};
+  )
+}
