@@ -55,9 +55,21 @@
     border-radius: 15px;
     border: none;
     cursor: pointer;
-    color: #fff;;
-   
-    background-color: #fb0101
+    color: #fff;
+    background-color: #fb0101;
+    
+}
+
+.end-button {
+    width: 250px;
+    height: 50px;
+    margin: 15px;
+    font-size: 1.3rem;
+    line-height: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: rgb(59, 122, 0);
+    border: 2px solid #d3b014;     
 }
 
 

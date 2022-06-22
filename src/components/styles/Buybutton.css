@@ -1,20 +1,19 @@
 .buyButton{
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    border-radius: 10px;
+display: flex;
+width: 100%;
+border-radius: 10px;
+padding-left: 28px;
 }
 .button{
-padding: 1.5em 4em 1.5em 4em;
+padding: 1em 2em 1em 2em;
 background-color: transparent;
 border-style: none;
+font-size: 18px;
 color: #fff;
+line-height: 20px;
 cursor: pointer;
 background-color: #3fb9e5;
-width: 90%;
+width: 95%;
 border-radius: 10px;
 }
 
@@ -22,3 +21,4 @@ border-radius: 10px;
 transform: scale(1.06);
 transition-duration: 0.5s;
 }
+
