@@ -13,15 +13,15 @@ export default function NavBar() {
             <Link to='/'>
                 <img className="logo-container" src={logo} alt="" />
             </Link>
-            <nav className="navBar">
+            <nav>
                 <ul className="nav-container">
-                    <Link to='/' >
+                    <Link to='/' className='link' >
                         <li>Inicio</li>
                     </Link>
-                    <Link to='/category/impresoras' >
+                    <Link to='/category/impresoras' className='link' >
                         <li>Impresoras</li>
                     </Link>
-                    <Link to='/category/insumos' >
+                    <Link to='/category/insumos'className='link' >
                         <li>Insumos</li>
                     </Link>
                 </ul>
